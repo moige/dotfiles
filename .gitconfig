@@ -1,0 +1,8 @@
+[user]
+	email = moige01@gmail.com
+	name = Moisés González
+	signingkey = 5BFA68B7203C5703E8F066396F8AD91E07E4CC53
+[gpg]
+	program = /usr/bin/gpg2
+[core]
+	editor = nano

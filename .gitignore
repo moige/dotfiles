@@ -1,0 +1,16 @@
+*
+!*/
+!.config/mpv/**
+!.config/i3/config
+!.config/i3/i3_guide.md.pdf
+!.config/polybar/**
+.config/i3/bar/
+.atom/
+.vim/
+.vscode
+src/
+temp/
+documents/
+!.git*
+!.*rc
+!.*profile
