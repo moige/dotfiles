@@ -4,6 +4,7 @@
 !.config/i3/config
 !.config/i3/i3_guide.md.pdf
 !.config/polybar/**
+!.local/bin/*.sh
 .config/i3/bar/
 .atom/
 .vim/
