@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-WALLPAPER_DIR="$HOME/Pictures/Wallpapers"
+WALLPAPER_DIR="$HOME/pictures/Wallpapers"
 
 WALLPAPER=$( ls $WALLPAPER_DIR | sort -R | head -1 )
 WALLPAPER="$WALLPAPER_DIR/$WALLPAPER"
