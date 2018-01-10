@@ -57,7 +57,7 @@ font-3 = Wuncon Siji:pixelsize=11;1
 
 modules-left = i3 redshift 
 modules-center = title
-modules-right = network gmail cpu memory home filesystem volume date xkeyboard
+modules-right = cpu memory home filesystem volume date xkeyboard
 
 tray-position = right
 tray-padding = 0
