@@ -28,9 +28,10 @@ alias rspace='for f in *\ *; do mv "$f" "${f// /_}"; done'
 alias p="sudo pacman"
 alias clmem="sudo sync && sudo sysctl vm.drop_caches=3"
 alias ka="killall"
-alias ls="ls -hN --color=auto --group-directories-first"
+alias ls="ls -hNF --color=auto --group-directories-first"
 alias mkdir="mkdir -pv"
 alias edit='eval "$VISUAL"'
+alias gac="git add . && git commit -m"
 
 # rsync -avzPhi --log-file="$HOME"/var/log/rsync.log --exclude={.cache,.local,.waterfox,.mozilla,.atom,libreoffice,.texlive,.git,{c,C}ache} $HOME backup/
 
