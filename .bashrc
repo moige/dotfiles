@@ -13,6 +13,10 @@ then
 	mkdir -p "$XDG_DATA_HOME/bash"
 fi
 
+if [ "$PS1" ]; then
+    complete -cf sudo
+fi
+
 HISTSIZE=10000
 HISTFILESIZE=20000
 
@@ -30,6 +34,7 @@ alias clmem="sudo sync && sudo sysctl vm.drop_caches=3"
 alias ka="killall"
 alias ls="ls -hNF --color=auto --group-directories-first"
 alias mkdir="mkdir -pv"
+alias rm="rm -vI"
 alias edit='eval "$VISUAL"'
 alias gac="git add . && git commit -m"
 
