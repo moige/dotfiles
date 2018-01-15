@@ -27,6 +27,9 @@ export GIT_PS1_SHOWUPSTREAM="auto verbose name git"
 export VISUAL=vim
 export EDITOR="$VISUAL"
 export SUDO_EDITOR="$VISUAL"
+export SSH_AGENT_PID=""
+export SSH_AUTH_SOCK=$(gpgconf --list-dirs agent-ssh-socket)
+gpgconf --launch gpg-agent
 
 alias rspace='for f in *\ *; do mv "$f" "${f// /_}"; done'
 alias p="sudo pacman"
