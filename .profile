@@ -2,6 +2,12 @@
 [[ ! -d "$HOME/.local/share" ]] && mkdir -p "$HOME/.locale/share" 
 [[ ! -d "$HOME/.cache" ]] && mkdir "$HOME/.cache"
 
+if [ ! -d "$XDG_DATA_HOME/bash" ]
+then
+	mkdir -p "$XDG_DATA_HOME/bash"
+fi
+
+
 PATH="$HOME/.local/bin:$PATH"
 export PATH
 
@@ -14,12 +20,8 @@ export WALLPAPER="$XDG_PICTURES_DIR/Wallpapers/$WALLPAPER"
 
 export HISTFILE="$XDG_DATA_HOME/bash/history"
 
-if [[ -f /usr/bin/waterfox ]]; then
-	export BROWSER="waterfox"
-elif [[ -f /usr/bin/palemoon ]]; then
-	export BROWSER="palemoon"
-elif [[ -f /usr/bin/iceweasel ]]; then
-	export BROWSER="iceweasel"
+if [[ -f /usr/bin/chromium ]]; then
+	export BROWSER="chromium"
 else
 	export BROWSER="firefox"
 fi
