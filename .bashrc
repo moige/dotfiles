@@ -4,17 +4,6 @@
 export HISTSIZE=10000
 export HISTFILESIZE=20000
 
-for i in $( ls $HOME/completion/ ) 
-do
-	source $HOME/completion/$i # Source each completion files
-done
-
-export PS1='[\u@\h -> \W$(__git_ps1 " : (%s)")]\n(\t) \$> '
-
-if [ "$PS1" ]; then
-	complete -cf sudo # Add sudo commands tab completion
-fi
-
 #------------------- GIT PROMPT STUFFS -------------------#
 
 export GIT_PS1_SHOWDIRTYSTATE=1
@@ -24,21 +13,6 @@ export GIT_PS1_SHOWUPSTREAM="auto verbose name git"
 export VISUAL=vim
 export EDITOR="$VISUAL"
 export SUDO_EDITOR="$VISUAL"
-
-#---------------------------------------------------------#
-
-#------------------- GPG STUFFS --------------------------#
-
-export GPG_TTY=$(tty)
-gpg-connect-agent updatestartuptty /bye >/dev/null
-export SSH_AGENT_PID=""
-export SSH_AUTH_SOCK=$(gpgconf --list-dirs agent-ssh-socket)
-gpgconf --launch gpg-agent
-
-   # gpg-connect-agent killagent /bye
-   # systemctl --user stop --now 'gpg-agent*.socket'
-   # gpg-connect-agent updatestartuptty /bye
-   # May need this for Systemd problems... Just systemd.
 
 #---------------------------------------------------------#
 
