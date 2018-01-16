@@ -31,6 +31,11 @@ export SSH_AGENT_PID=""
 export SSH_AUTH_SOCK=$(gpgconf --list-dirs agent-ssh-socket)
 gpgconf --launch gpg-agent
 
+   # gpg-connect-agent killagent /bye
+   # systemctl --user enable --now 'gpg-agent*.socket'
+   # gpg-connect-agent updatestartuptty /bye
+   # May need this for Systemd problems... Just systemd.
+
 alias rspace='for f in *\ *; do mv "$f" "${f// /_}"; done'
 alias p="sudo pacman"
 alias clmem="sudo sync && sudo sysctl vm.drop_caches=3"
