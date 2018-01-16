@@ -32,7 +32,7 @@ export SSH_AUTH_SOCK=$(gpgconf --list-dirs agent-ssh-socket)
 gpgconf --launch gpg-agent
 
    # gpg-connect-agent killagent /bye
-   # systemctl --user enable --now 'gpg-agent*.socket'
+   # systemctl --user stop --now 'gpg-agent*.socket'
    # gpg-connect-agent updatestartuptty /bye
    # May need this for Systemd problems... Just systemd.
 
@@ -43,6 +43,7 @@ alias ka="killall"
 alias ls="ls -hNF --color=auto --group-directories-first"
 alias mkdir="mkdir -pv"
 alias rm="rm -vI"
+alias mv="mv -v"
 alias edit='eval "$VISUAL"'
 alias gac="git add . && git commit -m"
 
