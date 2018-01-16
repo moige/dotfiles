@@ -6,6 +6,7 @@
 !.config/polybar/**
 !.local/bin/*.sh
 !completion/**
+.config/polybar/gmail/
 .config/i3/bar/
 .atom/
 .vim/
