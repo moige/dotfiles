@@ -4,7 +4,9 @@
 !.config/i3/config
 !.config/i3/i3_guide.md.pdf
 !.config/polybar/**
+!.config/mutt/*
 !.local/bin/*.sh
+!.local/bin/*.py
 !completion/**
 .config/polybar/gmail/
 .config/i3/bar/

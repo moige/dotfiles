@@ -5,4 +5,6 @@
 [gpg]
 	program = /usr/bin/gpg2
 [core]
-	editor = nano
+	editor = vim
+[alias]
+	gol = log --pretty=oneline --abbrev-commit

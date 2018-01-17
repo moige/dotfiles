@@ -50,8 +50,9 @@ alias clmem="sudo sync && sudo sysctl vm.drop_caches=3" # Sync cache and clean m
 alias ka="killall"
 alias ls="ls -hNF --color=auto --group-directories-first"
 alias mkdir="mkdir -pv"
-alias rm="rm -vI"
+alias rm="rm -vrI"
 alias mv="mv -v"
+alias cp="cp -vr"
 alias edit='eval "$VISUAL"'
 alias gac="git add . && git commit -m"
 
@@ -64,5 +65,6 @@ function youaudio { youtube-dl -x --audio-format opus --audio-quality 0 $1 && mv
 function aur { curl -O https://aur.archlinux.org/cgit/aur.git/snapshot/$1.tar.gz && tar -xvf $1.tar.gz && cd $1 && makepkg --noconfirm -si && cd .. && rm -rf $1 $1.tar.gz ;} # Download packages from AUR
 function pwgen { < /dev/urandom tr -dc '[:graph:]' | head -c"$1";echo; } # Gen a password from /dev/urandom. USE: pwgen [password lenght] 
 function flac2mp3 { for FILE in *.flac; do ffmpeg -i "$FILE" -b:a 320k "${FILE[@]/%flac/mp3}"; done; } # Convert FLAC to MP3 with FFMPEG
+function weath { curl wttr.in/caracas }
 
 #---------------------------------------------------------#

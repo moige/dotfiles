@@ -1,0 +1,23 @@
+set realname = "Moisés González"
+set from     = "moige01@gmail.com"
+set folder       = "~/mail/gmail"
+
+set sendmail     = "/usr/bin/msmtp"
+set edit_headers = yes
+set mbox         = "+INBOX"
+set record       = "+[Gmail]/Enviados"
+set postponed    = "+borradores"
+set mbox_type    = Maildir
+set spoolfile    = "+INBOX"
+mailboxes +INBOX
+
+# Store message headers locally to speed things up.
+# If hcache is a folder, Mutt will create sub cache folders for each account which may speeds things up even more.
+set header_cache = ~/.cache/mutt
+
+# Store messages locally to speed things up, like searching message bodies.
+# Can be the same folder as header_cache.
+# This will cost important disk usage according to your e-mail amount.
+set message_cachedir = "~/.cache/mutt"
+
+set my_pass=`gpg -d ~/.mail/email_psswd.gpg`
