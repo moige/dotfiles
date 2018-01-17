@@ -65,6 +65,6 @@ function youaudio { youtube-dl -x --audio-format opus --audio-quality 0 $1 && mv
 function aur { curl -O https://aur.archlinux.org/cgit/aur.git/snapshot/$1.tar.gz && tar -xvf $1.tar.gz && cd $1 && makepkg --noconfirm -si && cd .. && rm -rf $1 $1.tar.gz ;} # Download packages from AUR
 function pwgen { < /dev/urandom tr -dc '[:graph:]' | head -c"$1";echo; } # Gen a password from /dev/urandom. USE: pwgen [password lenght] 
 function flac2mp3 { for FILE in *.flac; do ffmpeg -i "$FILE" -b:a 320k "${FILE[@]/%flac/mp3}"; done; } # Convert FLAC to MP3 with FFMPEG
-function weath { curl wttr.in/caracas }
+function weath { curl wttr.in/caracas; }
 
 #---------------------------------------------------------#
