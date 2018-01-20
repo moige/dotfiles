@@ -9,13 +9,15 @@ autocmd BufEnter * :syntax sync fromstart
 autocmd BufEnter * :syn sync maxlines=250
 set ttyfast
 set lazyredraw
-
+set tabstop=4
 set number
 set relativenumber
 "set so=10
 set hlsearch
 vnoremap <C-c> "*y
 nnoremap <C-t> :tabnew<cr>
+nnoremap <C-Left> :tabprevious<CR>
+nnoremap <C-Right> :tabnext<CR>
 
 """BASIC TOOLS
 "Navigating with guides
