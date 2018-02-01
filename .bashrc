@@ -44,6 +44,7 @@ export SUDO_EDITOR="$VISUAL"
 
 #-------------------- ALIAS ------------------------------#
 
+alias cdsrc='cd "$HOME"/src/Python/flask-web'
 alias rspace='for f in *\ *; do mv "$f" "${f// /_}"; done' # Remove spaces of files in actually directory
 alias p="sudo pacman"
 alias clmem="sudo sync && sudo sysctl vm.drop_caches=3" # Sync cache and clean memory cache
