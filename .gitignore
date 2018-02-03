@@ -8,6 +8,7 @@
 !.local/bin/*.sh
 !.local/bin/*.py
 !completion/**
+!.tmux.conf
 .config/polybar/gmail/
 .config/i3/bar/
 .atom/
