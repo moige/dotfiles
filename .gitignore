@@ -20,3 +20,4 @@ documents/
 !.git*
 !.*rc
 !.*profile
+.config/chromium

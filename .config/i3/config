@@ -33,7 +33,7 @@ exec --no-startup-id lock.sh -u "$WALPPAPER"
 
 
 ###---Basic Bindings---###
-bindsym $mod+Return 		exec $term
+bindsym $mod+Return 		exec $term -e tmux
 
 bindsym $mod+Shift+space 	floating toggle
 bindsym $mod+space		focus mode_toggle
@@ -210,6 +210,6 @@ bindsym $mod+Shift+bracketright exec $bigfor
 
 #Print screen takes a screenshot.
 #With shift, it takes one only of the given window.
-bindsym Print 			exec --no-startup-id scrot -e 'mv $f ~/pictures/ss'
-bindsym Shift+Print 		exec --no-startup-id scrot -s -e 'mv $f ~/pictures/ss'
+#bindsym Print 			exec --no-startup-id scrot -e 'mv $f ~/pictures/ss'
+#bindsym Shift+Print 		exec --no-startup-id scrot -s -e 'mv $f ~/pictures/ss'
 
