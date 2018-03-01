@@ -15,6 +15,19 @@ if [ "$PS1" ]; then
 	complete -cf sudo # Add sudo commands tab completion
 fi
 
+#------------------- MAN COLORS --------------------------#
+
+export MANROFFOPT='-c'
+export LESS_TERMCAP_mb=$(tput bold; tput setaf 2)
+export LESS_TERMCAP_md=$(tput bold; tput setaf 6)
+export LESS_TERMCAP_me=$(tput sgr0)
+export LESS_TERMCAP_so=$(tput bold; tput setaf 3; tput setab 4)
+export LESS_TERMCAP_se=$(tput rmso; tput sgr0)
+export LESS_TERMCAP_us=$(tput smul; tput bold; tput setaf 7)
+export LESS_TERMCAP_ue=$(tput rmul; tput sgr0)
+export LESS_TERMCAP_mr=$(tput rev)
+export LESS_TERMCAP_mh=$(tput dim)
+
 #------------------- GPG STUFFS --------------------------#
 
 export GPG_TTY=$(tty)
@@ -28,8 +41,6 @@ gpgconf --launch gpg-agent
    # gpg-connect-agent updatestartuptty /bye
    # May need this for Systemd problems... Just systemd.
 
-#---------------------------------------------------------#
-
 #------------------- GIT PROMPT STUFFS -------------------#
 
 export GIT_PS1_SHOWDIRTYSTATE=1
@@ -39,8 +50,6 @@ export GIT_PS1_SHOWUPSTREAM="auto verbose name git"
 export VISUAL=vim
 export EDITOR="$VISUAL"
 export SUDO_EDITOR="$VISUAL"
-
-#---------------------------------------------------------#
 
 #-------------------- ALIAS ------------------------------#
 
@@ -57,15 +66,12 @@ alias cp="cp -vr"
 alias edit='eval "$VISUAL"'
 alias gac="git add . && git commit -m"
 
-#---------------------------------------------------------#
-
 #-------------------- FUNCTIONS --------------------------#
 
 function youaudio-mp3 { youtube-dl -x --audio-format mp3 --audio-quality 0 $1 && mv -v *.mp3 $HOME/music ;} # Download audios from YouTube in MP3 format.
-function youaudio { youtube-dl -x --audio-format opus --audio-quality 0 $1 && mv -v *.opus $HOME/music ;} # Download audios from YouTube in OPUS format.
+function youaudio { youtube-dl -x --audio-format opus --audio-quality 0 $1 && mv -v *.opus $HOME/music ;} # Download audios from YouTube in OPUS format. Change extension to ".ogg" for Android.
 function aur { curl -O https://aur.archlinux.org/cgit/aur.git/snapshot/$1.tar.gz && tar -xvf $1.tar.gz && cd $1 && makepkg --noconfirm -si && cd .. && rm -rf $1 $1.tar.gz ;} # Download packages from AUR
 function pwgen { < /dev/urandom tr -dc '[:graph:]' | head -c"$1";echo; } # Gen a password from /dev/urandom. USE: pwgen [password lenght] 
 function flac2mp3 { for FILE in *.flac; do ffmpeg -i "$FILE" -b:a 320k "${FILE[@]/%flac/mp3}"; done; } # Convert FLAC to MP3 with FFMPEG
 function weath { curl wttr.in/caracas; }
 
-#---------------------------------------------------------#
